@@ -128,9 +128,6 @@ def save_product_catalog(documents):
 def main():
     documents = load_pdfs()
 
-    save_product_catalog(documents)
-    index_chunks(documents)
-
     print(f"Extracted PDF pages: {len(documents)}")
 
     if not documents:
@@ -138,6 +135,7 @@ def main():
         return
 
     index_chunks(documents)
+    save_product_catalog(documents)
 
     print("\nPDF indexing completed.")
 
